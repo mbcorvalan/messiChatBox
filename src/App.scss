@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+* {
+	color: #fff;
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
+}
+
+//Color variables
+$color-primary: #3585f9;
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 10px;
+}
+
+.app {
+	display: flex;
+
+	.sidebar {
+		background-color: $color-primary;
+		height: 100vh;
+		width: 260px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		&__new-chat {
+			border: solid 0.5px rgba(255, 255, 255, 0.5);
+			border-radius: 5px;
+			background-color: transparent;
+			padding: 10px;
+			margin: 10px;
+			cursor: pointer;
+		}
+
+		&__history {
+			&-item {
+				list-style-type: none;
+				padding: 15px 0;
+				font-size: 1.4rem;
+				cursor: pointer;
+			}
+		}
+
+		&__nav {
+			padding: 10px;
+			margin: 10px;
+			border-top: solid 0.5px rgba(255, 255, 255, 0.5);
+		}
+	}
+
+	.mainBar {
+		background-color: #fff;
+		height: 100vh;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+
+		/* width: calc(100% - 244px); */
+		.info {
+			color: rgba(255, 255, 255, 0.5);
+			font-size: 1.1rem;
+		}
+
+		&__feed {
+			list-style-type: none;
+			width: 100%;
+			padding: 2rem 0px;
+			overflow: overlay;
+
+			&-item {
+				padding: 2rem 6rem;
+				font-size: 1.4rem;
+				display: flex;
+				align-items: center;
+
+
+				&--assistant {
+					background-color: #f9f5f6;
+					border-top-color: #9e9e9e;
+					border-bottom-color: #9e9e9e;
+				}
+			}
+		}
+
+		&__role {
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			margin-right: 20px;
+		}
+
+		&__message {
+			color: $color-primary;
+		}
+
+		&_bottom-section {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+
+			.input-container {
+				position: relative;
+				width: 100%;
+				max-width: 65rem;
+
+				input {
+					width: 100%;
+					border-radius: 5px;
+					padding: 12px 15px;
+					font-size: 1.1rem;
+					background-color: #fff;
+					border: 1px solid $color-primary;
+					color: $color-primary;
+					font-size: 1.4rem;
+
+					&::placeholder {
+						color: $color-primary;
+						/* Change 'red' to your desired color */
+					}
+
+					/* For Internet Explorer 10-11 */
+					&:-ms-input-placeholder {
+						color: $color-primary;
+					}
+
+					/* For Internet Explorer 10+ */
+					&::-ms-input-placeholder {
+						color: $color-primary;
+					}
+
+					&:focus {
+						outline: none;
+					}
+				}
+
+				#submit {
+					position: absolute;
+					right: 20px;
+					top: 25%;
+					background: #ffff;
+					border: none;
+					cursor: pointer;
+
+					img {
+						width: 20px;
+						height: 20px;
+						margin: 0;
+					}
+				}
+			}
+		}
+	}
+}
